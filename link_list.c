@@ -92,7 +92,6 @@ void insert_link(){//插入操作
             ptr->next=head;//将新节点链接到原始节点的头上
             head=ptr;//更换链表的头
             printf("节点已插入！\n");
-            print_link(head);
         }else{
             printf("申请内存失败！");
         }
@@ -163,7 +162,6 @@ void delete_link(){//删除操作
         head=ptr->next;
         free(ptr);
         printf("第一个节点删除成功！\n");
-        print_link(head);
         break;
     case -1:
         if(head->next==NULL){
@@ -180,7 +178,6 @@ void delete_link(){//删除操作
             free(ptr);
         }
         printf("最后一个节点删除成功！\n");
-        print_link(head);
         break;
     default:
         ptr=head;
@@ -195,7 +192,6 @@ void delete_link(){//删除操作
         p->next=ptr->next;
         free(ptr);
         printf("%d-th个节点删除成功！\n",loc);
-        print_link(head);
         break;
     }
 }
