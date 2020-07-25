@@ -124,9 +124,9 @@ void insert_link(){//插入操作
         scanf("%d",&loc);
         ptr=(node *)malloc(sizeof(node));
         node *temp=head;
-        if(temp){
-            for(i=0;i<loc;i++){
-                if(!temp){
+        if(head){
+            for(i=0;i<loc-1;i++){
+                if(!temp->next){
                     printf("该插入位置不存在（可能是由于输入位置大于链表长度导致的）！\n");
                     return;
                 }else{
@@ -136,8 +136,8 @@ void insert_link(){//插入操作
             ptr->data=num;
             ptr->next=temp->next;
             ptr->pre=temp;
-            temp->next=ptr;
             temp->next->pre=ptr;
+            temp->next=ptr;
             printf("节点插入成功！\n");
         }else{
             printf("链表为空！\n");
