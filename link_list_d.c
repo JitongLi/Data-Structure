@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 /*
 该文件代码用于实现双链表
@@ -133,12 +134,20 @@ void insert_link(){//插入操作
                     temp=temp->next;
                 }
             }
-            ptr->data=num;
-            ptr->next=temp->next;
-            ptr->pre=temp;
-            temp->next->pre=ptr;
-            temp->next=ptr;
-            printf("节点插入成功！\n");
+            if(temp->next==head){
+                head->next=ptr;
+                ptr->next=head;
+                head->pre=ptr;
+                ptr->pre=head;
+                printf("节点插入成功！\n");
+            }else{
+                ptr->data=num;
+                ptr->next=temp->next;
+                ptr->pre=temp;
+                temp->next->pre=ptr;
+                temp->next=ptr;
+                printf("节点插入成功！\n");
+            }
         }else{
             printf("链表为空！\n");
         }
