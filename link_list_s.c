@@ -72,7 +72,7 @@ void print_link(node *ptr){
     }
     else{
         while(ptr!=NULL){
-            printf("%d-th节点的值：%d\n",count,ptr->data);
+            printf("%d-th结点的值：%d\n",count,ptr->data);
             ptr=ptr->next;
             count++;
         }
@@ -89,10 +89,10 @@ void insert_link(){//插入操作
         scanf("%d",&data);
         ptr=(node *)malloc(sizeof(node *));
         if (ptr){
-            ptr->data=data;//为插入节点赋值
-            ptr->next=head;//将新节点链接到原始节点的头上
+            ptr->data=data;//为插入结点赋值
+            ptr->next=head;//将新结点链接到原始结点的头上
             head=ptr;//更换链表的头
-            printf("节点已插入！\n");
+            printf("结点已插入！\n");
         }else{
             printf("申请内存失败！");
         }
@@ -117,7 +117,7 @@ void insert_link(){//插入操作
             }
             ptr->next=temp->next;
             temp->next=ptr;
-            printf("节点已插入！\n");
+            printf("结点已插入！\n");
         }else{
             printf("申请内存失败！");
         }
@@ -135,7 +135,7 @@ void insert_link(){//插入操作
                 }
                 temp->next=ptr;
                 ptr->next=NULL;
-                printf("节点已插入！\n");
+                printf("结点已插入！\n");
             }else{//链表为空
                 ptr->next=NULL;
                 head=ptr;
@@ -143,7 +143,7 @@ void insert_link(){//插入操作
         }else{
             printf("申请内存失败！");
         }
-        printf("节点已插入！\n");
+        printf("结点已插入！\n");
         break;
     default:
         printf("输入有误，请重新输入！");
@@ -155,14 +155,14 @@ void delete_link(){//删除操作
     int loc;
     int i;
     node *p;
-    printf("请输入您要删除节点的位置（1:第一个，-1：最后一个，其他：中间位置）：\n");
+    printf("请输入您要删除结点的位置（1:第一个，-1：最后一个，其他：中间位置）：\n");
     scanf("%d",&loc);
     switch(loc){
     case 1:
         ptr=head;
         head=ptr->next;
         free(ptr);
-        printf("第一个节点删除成功！\n");
+        printf("第一个结点删除成功！\n");
         break;
     case -1:
         if(head->next==NULL){
@@ -178,7 +178,7 @@ void delete_link(){//删除操作
             p->next=NULL;
             free(ptr);
         }
-        printf("最后一个节点删除成功！\n");
+        printf("最后一个结点删除成功！\n");
         break;
     default:
         ptr=head;
@@ -192,7 +192,7 @@ void delete_link(){//删除操作
         }
         p->next=ptr->next;
         free(ptr);
-        printf("%d-th个节点删除成功！\n",loc);
+        printf("%d-th个结点删除成功！\n",loc);
         break;
     }
 }
