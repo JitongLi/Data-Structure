@@ -55,11 +55,11 @@ void init_link(){
 }
 void insert_link(){
     int choice,data,loc,i;
-    printf("请输入您要插入的位置(1:头节点2:指定位置-1:尾节点)\n");
+    printf("请输入您要插入的位置(1:头结点2:指定位置-1:尾结点)\n");
     scanf("%d",&choice);
     ptr=(node *)malloc(sizeof(node));
     switch(choice){
-    case 1://从头节点插入
+    case 1://从头结点插入
         printf("请输入插入数据：");
         scanf("%d",&data);
         ptr->data=data;
@@ -71,11 +71,11 @@ void insert_link(){
             ptr->next=head;
             temp->next=ptr;
             head=ptr;
-            printf("节点插入成功！\n");
+            printf("结点插入成功！\n");
         }else{
             head=ptr;
             ptr->next=head;
-            printf("节点插入成功！\n");
+            printf("结点插入成功！\n");
         }
         break;
     case 2://指定位置插入
@@ -96,12 +96,12 @@ void insert_link(){
             ptr->data=data;
             ptr->next=temp->next;
             temp->next=ptr;
-            printf("节点插入成功！\n");
+            printf("结点插入成功！\n");
         }else{
             printf("链表为空，该位置不存在！\n");
         }
         break;
-    case -1://尾节点插入
+    case -1://尾结点插入
         printf("请输入插入数据：");
         scanf("%d",&data);
         ptr->data=data;
@@ -112,11 +112,11 @@ void insert_link(){
             }
             temp->next=ptr;
             ptr->next=head;
-            printf("节点插入成功！\n");
+            printf("结点插入成功！\n");
         }else{
             head=ptr;
             ptr->next=head;
-            printf("节点插入成功！\n");
+            printf("结点插入成功！\n");
         }
         break;
     default:
@@ -126,10 +126,10 @@ void insert_link(){
 }
 void delete_link(){
     int choice,loc,i;
-    printf("请输入您要删除数据的位置(1:头节点2:指定位置-1:尾节点)\n");
+    printf("请输入您要删除数据的位置(1:头结点2:指定位置-1:尾结点)\n");
     scanf("%d",&choice);
     switch(choice){
-    case 1://头节点删除
+    case 1://头结点删除
         if(head){
             node *temp=head;
             while(temp->next!=head){
@@ -139,13 +139,13 @@ void delete_link(){
                 ptr=head;
                 head=NULL;
                 free(ptr);
-                printf("节点删除成功！\n");
+                printf("结点删除成功！\n");
             }else{
                 ptr=head;
                 temp->next=head->next;
                 head=head->next;
                 free(ptr);
-                printf("节点删除成功！\n");
+                printf("结点删除成功！\n");
             }
         }else{
             printf("链表为空！\n");
@@ -169,17 +169,17 @@ void delete_link(){
                 ptr=head;
                 head=NULL;
                 free(ptr);
-                printf("节点删除成功！\n");
+                printf("结点删除成功！\n");
             }else{
                 ptr->next=temp->next;
                 free(temp);
-                printf("节点删除成功！\n");
+                printf("结点删除成功！\n");
             }
         }else{
             printf("链表为空！\n");
         }
         break;
-    case -1://尾节点删除
+    case -1://尾结点删除
         if(head){
             node *temp;
             ptr=head;
@@ -190,11 +190,11 @@ void delete_link(){
             if(ptr==head){
                 head=NULL;
                 free(ptr);
-                printf("节点删除成功！\n");
+                printf("结点删除成功！\n");
             }else{
                 temp->next=head;
                 free(ptr);
-                printf("节点删除成功！\n");
+                printf("结点删除成功！\n");
             }
         }else{
             printf("链表为空！\n");
@@ -210,10 +210,10 @@ void print_link(node *head){
     node *ptr=head;
     if(head){
        while(ptr->next!=head){
-            printf("%d-th个节点的值：%d\n",count,ptr->data);
+            printf("%d-th个结点的值：%d\n",count,ptr->data);
             ptr=ptr->next;
         }
-        printf("%d-th个节点的值：%d\n",count,ptr->data);
+        printf("%d-th个结点的值：%d\n",count,ptr->data);
     }else{
         printf("链表为空！\n");
     }
