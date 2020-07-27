@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 /*
 该文件代码用于实现双链表
@@ -74,7 +73,7 @@ void print_link(){//遍历操作
     ptr=head;
     int count=1;
     while(ptr){
-        printf("%d-th节点的值：%d\n",count,ptr->data);
+        printf("%d-th结点的值：%d\n",count,ptr->data);
         ptr=ptr->next;
         count++;
     }
@@ -96,26 +95,26 @@ void search_link(){//查找操作
 }
 void insert_link(){//插入操作
     int choice,num,i,loc;
-    printf("请输入您要插入的位置（1：头节点2：指定位置3：尾节点）\n");
+    printf("请输入您要插入的位置（1：头结点2：指定位置3：尾结点）\n");
     scanf("%d",&choice);
     switch(choice){
-    case 1://头节点插入
+    case 1://头结点插入
         printf("请输入要插入的数据:");
         scanf("%d",&num);
         ptr=(node *)malloc(sizeof(node));
-        if(head){//头节点不为空
+        if(head){//头结点不为空
             ptr->data=num;
             ptr->next=head;
             head->pre=ptr;
             ptr->pre=NULL;
             head=ptr;
-            printf("节点插入成功！\n");
-        }else{//头节点为空的情况
+            printf("结点插入成功！\n");
+        }else{//头结点为空的情况
             ptr->next=NULL;
             ptr->pre=NULL;
             ptr->data=num;
             head=ptr;
-            printf("节点插入成功！\n");
+            printf("结点插入成功！\n");
         }
         break;
     case 2://指定位置插入
@@ -139,24 +138,24 @@ void insert_link(){//插入操作
                 ptr->next=head;
                 head->pre=ptr;
                 ptr->pre=head;
-                printf("节点插入成功！\n");
+                printf("结点插入成功！\n");
             }else{
                 ptr->data=num;
                 ptr->next=temp->next;
                 ptr->pre=temp;
                 temp->next->pre=ptr;
                 temp->next=ptr;
-                printf("节点插入成功！\n");
+                printf("结点插入成功！\n");
             }
         }else{
             printf("链表为空！\n");
         }
         break;
-    case 3://尾节点插入
+    case 3://尾结点插入
         printf("请输入要插入的数据:");
         scanf("%d",&num);
         ptr=(node *)malloc(sizeof(node));
-        if(head){//头节点不为空
+        if(head){//头结点不为空
             node *temp=head;
             while(temp->next){
                 temp=temp->next;
@@ -165,13 +164,13 @@ void insert_link(){//插入操作
             ptr->data=num;
             ptr->pre=temp;
             ptr->next=NULL;
-            printf("节点插入成功！\n");
-        }else{//头节点为空
+            printf("结点插入成功！\n");
+        }else{//头结点为空
             ptr->next=NULL;
             ptr->pre=NULL;
             ptr->data=num;
             head=ptr;
-            printf("节点插入成功！\n");
+            printf("结点插入成功！\n");
         }
         break;
     default:
@@ -182,7 +181,7 @@ void insert_link(){//插入操作
 }
 void delete_link(){//删除操作
     int choice,i,loc;
-    printf("请输入要删除的位置（1：头节点；2：指定节点；3：尾节点）\n");
+    printf("请输入要删除的位置（1：头结点；2：指定结点；3：尾结点）\n");
     scanf("%d",&choice);
     switch(choice){
     case 1:
@@ -191,14 +190,14 @@ void delete_link(){//删除操作
             head=head->next;
             head->pre=NULL;
             free(ptr);
-            printf("节点删除成功！\n");
+            printf("结点删除成功！\n");
         }else{
             printf("链表为空！\n");
         }
         break;
     case 2:
         if(head){
-            printf("请输入要删除节点的位置：");
+            printf("请输入要删除结点的位置：");
             scanf("%d",&loc);
             node *temp=head;
             for(i=0;i<loc;i++){
@@ -217,7 +216,7 @@ void delete_link(){//删除操作
             }else{
                 temp->pre->next=NULL;
                 free(temp);
-                printf("该节点为尾节点，已删除！\n");
+                printf("该结点为尾结点，已删除！\n");
             }
         }else{
             printf("链表为空！\n");
@@ -231,7 +230,7 @@ void delete_link(){//删除操作
             }
             ptr->pre->next=NULL;
             free(ptr);
-            printf("节点删除成功！\n");
+            printf("结点删除成功！\n");
         }else{
             printf("链表为空！\n");
         break;
