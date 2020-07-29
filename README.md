@@ -14,6 +14,7 @@
 3.队列
   3.1队列的数组实现（queue_array.c）
   3.2队列的链表实现（queue_link.c）
+  3.3循环队列的实现（queue_cycle.c）
 4.树
   4.1二叉树（binary_tree.c）
   4.2二叉搜索树（binary_search.c）
