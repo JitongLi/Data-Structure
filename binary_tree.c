@@ -1,5 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+/*
+该文件代码用于二叉树遍历的实现
+created time:2020.08.04
+@Author：Jeaten
+@E-mail：ljt_IT@163.com
+*/
 typedef struct Node{
     struct Node *l;
     char *data;
