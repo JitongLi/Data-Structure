@@ -16,7 +16,7 @@
   3.2队列的链表实现（queue_link.c）
   3.3循环队列的实现（queue_cycle.c）
 4.树
-  4.1二叉树（binary_tree.c）
+  4.1二叉树遍历的实现（binary_tree.c）
   4.2二叉搜索树（binary_search.c）
   4.3平衡搜索树（AVL）（avl.c）
   4.4B树（b_tree.c）
